@@ -1,0 +1,9 @@
+{
+  "name": "WORTHX",
+  "description": "Where Waste Finds Value - AI-powered marketplace connecting waste and by-product producers with resource seekers.",
+  "requestFramePermissions": [
+    "camera",
+    "microphone"
+  ],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
