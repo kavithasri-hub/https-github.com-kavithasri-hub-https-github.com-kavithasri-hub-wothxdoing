@@ -277,7 +277,22 @@ export const AiSearchSection: React.FC<AiSearchSectionProps> = ({
                       <Camera className="w-4 h-4 text-emerald-400" />
                       <div>
                         <div>Real-Time Camera</div>
-                        <span className="text-[10px] text-slate-400 font-normal">Snap a live picture</span>
+                        <span className="text-[10px] text-slate-400 font-normal">Live video viewfinder</span>
+                      </div>
+                    </button>
+
+                    <button
+                      type="button"
+                      onClick={() => {
+                        setImageMenuOpen(false);
+                        cameraInputRef.current?.click();
+                      }}
+                      className="w-full text-left px-3 py-2.5 rounded-xl hover:bg-slate-700 text-xs font-bold text-white flex items-center gap-2 cursor-pointer transition-colors"
+                    >
+                      <Camera className="w-4 h-4 text-emerald-300" />
+                      <div>
+                        <div>Device Camera</div>
+                        <span className="text-[10px] text-slate-400 font-normal">Direct mobile/system snap</span>
                       </div>
                     </button>
 

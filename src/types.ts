@@ -74,6 +74,7 @@ export type OrderStatus =
   | 'Seller Confirmed'
   | 'Processing'
   | 'Shipped'
+  | 'Out for Delivery'
   | 'Delivered'
   | 'Completed'
   | 'Cancelled'

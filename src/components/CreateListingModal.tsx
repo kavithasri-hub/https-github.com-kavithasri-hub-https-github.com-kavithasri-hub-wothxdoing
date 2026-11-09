@@ -88,6 +88,7 @@ export const CreateListingModal: React.FC<CreateListingModalProps> = ({
   const [successMessage, setSuccessMessage] = useState<string | null>(null);
 
   const fileInputRef = useRef<HTMLInputElement | null>(null);
+  const cameraInputRef = useRef<HTMLInputElement | null>(null);
   const validationTimeoutRef = useRef<any>(null);
 
   useEffect(() => {
@@ -649,14 +650,33 @@ export const CreateListingModal: React.FC<CreateListingModalProps> = ({
                 onChange={handleFileUpload}
                 className="hidden"
               />
+              <input
+                ref={cameraInputRef}
+                type="file"
+                accept="image/*"
+                capture="environment"
+                onChange={handleFileUpload}
+                className="hidden"
+              />
 
               <button
                 type="button"
                 onClick={() => setIsCameraOpen(true)}
                 className="px-3.5 py-2 rounded-xl bg-emerald-900 hover:bg-emerald-800 text-white text-xs font-bold flex items-center gap-1.5 transition-colors cursor-pointer shadow-2xs"
+                title="Open real-time camera viewfinder"
               >
                 <Camera className="w-3.5 h-3.5 text-emerald-300" />
                 Live Camera
+              </button>
+
+              <button
+                type="button"
+                onClick={() => cameraInputRef.current?.click()}
+                className="px-3.5 py-2 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-800 text-xs font-bold flex items-center gap-1.5 transition-colors cursor-pointer"
+                title="Snap a photo directly with device camera"
+              >
+                <Camera className="w-3.5 h-3.5 text-emerald-700" />
+                Device Camera
               </button>
 
               <button
